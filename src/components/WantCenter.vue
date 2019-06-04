@@ -22,6 +22,7 @@
           </cld-poster>
         </cld-video>
       </vue-plyr>
+      <SelectPanel :telegram="video.telegram" />
     </v-touch>
   </div>
 </template>
@@ -93,11 +94,11 @@ export default {
       // redirectWindow.location;
     },
     onTap() {
-      // this.player.muted = false;
+      this.player.muted = false;
       this.player.play();
     },
     onPress() {
-      // this.player.pause();
+      this.player.pause();
     },
     onPressUp() {
       this.player.play();

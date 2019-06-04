@@ -26,5 +26,6 @@ export default {
     width: 100%;
   }
   width: 70%;
+  max-width: 300px;
 }
 </style>

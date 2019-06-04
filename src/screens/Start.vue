@@ -1,15 +1,20 @@
 <template>
-  <!-- <Feed /> -->
-  <SelectPanel />
+  <div>
+    <TopPanelStart />
+    <UploadPanel />
+  </div>
 </template>
 
 <script>
 import Feed from '@/components/Feed';
-import SelectPanel from '@/components/SelectPanel';
+import UploadPanel from '@/components/UploadPanel';
+import TopPanelStart from '@/components/TopPanelStart';
 
 export default {
   components: {
-    SelectPanel,
+    UploadPanel,
+    TopPanelStart,
   },
+  mounted() {},
 };
 </script>

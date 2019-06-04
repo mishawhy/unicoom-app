@@ -1,24 +1,12 @@
 <template>
   <div class="position-fixed fixed-top top-panel-container p-3">
     <b-button-group class="top-panel ">
-      <b-button
-        class="text-left btn-light rounded-pill btn-selected p-2 pl-3 rounded-right"
-        v-if="!wait"
-        @click="playSelected"
-      >
-        <i class="fas mr-1" v-bind:class="{ 'fa-play': !play, 'fa-pause': play }"></i>
-        1 selected you to meet</b-button
-      >
-
-      <b-button
-        class="text-left btn-light rounded-pill btn-selected p-2 pl-3 rounded-right"
-        v-if="wait"
-      >
+      <b-button class="text-left btn-light rounded-pill btn-selected p-2 pl-3 rounded-right">
         <b-spinner small type="grow" class=" mr-1"></b-spinner>
-        Find matches</b-button
+        {{ name }} wait your video</b-button
       >
 
-      <b-button class="w-30 btn-light btn-close rounded-pill p-1" @click="goToStart">×</b-button>
+      <b-button class="w-30 btn-light btn-close rounded-pill p-1" @click="goToEnter">×</b-button>
     </b-button-group>
   </div>
 </template>
@@ -27,22 +15,19 @@
 export default {
   data() {
     return {
-      wait: true,
-      play: false,
+      name: '',
     };
   },
   mounted() {
-    setTimeout(() => {
-      this.wait = false;
-    }, 6000);
+    this.name = this.$route.query.name;
   },
   methods: {
     playSelected() {
       this.play = !this.play;
       this.$emit('playSelected', 1);
     },
-    goToStart() {
-      this.$router.push({ path: '/start' });
+    goToEnter() {
+      this.$router.push({ path: '/enter' });
     },
   },
   name: 'TopPanel',
