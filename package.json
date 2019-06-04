@@ -14,7 +14,7 @@
     "knex": "knex --knexfile ./db/knexfile.js --debug",
     "watch": "webpack --watch",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "NODE_ENV=production vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -34,6 +34,7 @@
     "cloudinary": "^1.14.0",
     "cloudinary-vue": "^1.0.0-beta2",
     "concurrently": "^4.1.0",
+    "connect-history-api-fallback": "^1.6.0",
     "connect-redis": "^3.4.0",
     "cookie-parser": "~1.4.3",
     "core-js": "^2.6.5",

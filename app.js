@@ -10,7 +10,7 @@ const i18n = require('i18n-express');
 const geolang = require('geolang-express');
 const RedisStore = require('connect-redis')(session);
 const moment = require('moment');
-
+const history = require('connect-history-api-fallback');
 const initAuthMiddleware = require('./features/login/init-auth-middleware');
 const indexRouter = require('./routes/index');
 
@@ -35,6 +35,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(history({ verbose: true }));
 app.use(express.static(path.join(__dirname, staticFolder)));
 
 const { COOKIE_EXPIRATION_MS } = process.env;
@@ -72,7 +73,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/', indexRouter);
+app.use('/api', indexRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res) => {
