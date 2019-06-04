@@ -1,0 +1,18 @@
+{
+  "WELCOME": "Welcome!",
+"WELCOME_MSG": "Hi! Welcome!",
+"WELCOME_DESCRIBE": "Please help us to fix issues with one quick message",
+"CONTACT_TEXT": "More bla",
+"SHARE_IDEA_BTN": "SEND ISSUE TO FIX",
+"SEARCH": "Search",
+"LANGUAGE": "Language",
+"ANSWERS": "Faced",
+"TAKE_CHALLENGE": "Face challenge",
+"SIGN_IN": "Sign In",
+"SIGN_IN_DESCRIPTION": "Using username or email",
+"SIGN_UP": "Sign Up",
+"SIGN_UP_DESCRIPTION": "Face challenges for your skills",
+"RESET_TITLE": "Reset password",
+"RESET_DESCRIPTION": "Use your email to reset password",
+"CHANGE_PASSWORD" : "Change password"
+}

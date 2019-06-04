@@ -1,0 +1,15 @@
+{
+  "WELCOME": "Раді бачити вас знову!",
+  "WELCOME_DESCRIBE": "Допоможіть нам виправити незручності за допомогою одного  короткого повідомлення",
+"WELCOME_MSG": "Hi! Welcome!",
+"CONTACT_TEXT": "More bla",
+"SHARE_IDEA_BTN": "НАДІСЛАТИ ІДЕЮ-ФІКС",
+"SEARCH": "Пошук",
+"LANGUAGE": "Мова",
+"ANSWERS": "Відповідей",
+"TAKE_CHALLENGE": "Відповісти",
+"SIGN_IN": "Увійти",
+"SIGN_IN_DESCRIPTION": "Використовуючи ваш нікнейм або пошту",
+"SIGN_UP": "Зареєструйтеся",
+"SIGN_UP_DESCRIPTION": "Приймайте виклики для своїх навичок"
+}
