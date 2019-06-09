@@ -1,5 +1,6 @@
 <template>
   <div class="position-fixed fixed-bottom text-center border-white p-3">
+    <h3 class="text-white mb-5">Meet easy with people nearby</h3>
     <vue-telegram-login mode="callback" telegram-login="slktbot" @callback="showUser" />
     <!-- <a class="btn btn-primary" @click="showUserTest">Telegram test</a> -->
   </div>

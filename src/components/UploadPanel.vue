@@ -1,9 +1,13 @@
 <template>
   <div class="select-panel-container position-fixed fixed-bottom text-center justify-content-end">
     <div class="mb-0 p-0">
+      <h6 class="text-white mb-5">TELL ABOUT YOUR IDEA TO MEET</h6>
+      <h4 class="text-white mb-5">"Quick business talk about local shares market"</h4>
+      <h4 class="text-white mb-5">"Just talk with hookhah"</h4>
+      <h4 class="text-white mb-5">"Watch a film today evening"</h4>
       <input id="fileUpload" type="file" accept="video/*" capture="user" hidden />
       <v-touch v-on:tap="upload">
-        <a class="btn-slkt mt-0 text-left">
+        <a class="btn-slkt btn-upload text-center mt-0">
           <img :src="btnIcon" width="70" />
         </a>
       </v-touch>
@@ -29,4 +33,10 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.btn-upload {
+  padding: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+</style>
