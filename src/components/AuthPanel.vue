@@ -1,7 +1,11 @@
 <template>
   <div class="position-fixed fixed-bottom text-center border-white p-3">
     <h3 class="text-white mb-5">Meet easy with people nearby</h3>
-    <vue-telegram-login mode="callback" telegram-login="slktbot" @callback="showUser" />
+    <vue-telegram-login
+      mode="redirect"
+      telegram-login="slktbot"
+      redirect-url="https://slkt-dev.herokuapp.com/api/auth/telegram"
+    />
     <!-- <a class="btn btn-primary" @click="showUserTest">Telegram test</a> -->
   </div>
 </template>
@@ -28,13 +32,19 @@ export default {
   },
   methods: {
     showUserTest() {
-      this.$router.push({ path: '/start', query: { name: this.callback.username } });
+      this.$router.push({
+        path: '/start',
+        query: { name: this.callback.username, photo: this.callback.photo_url },
+      });
 
       console.log(this.callback);
     },
 
     showUser(user) {
-      this.$router.push({ path: '/start', query: { name: user.username } });
+      this.$router.push({
+        path: '/start',
+        query: { name: user.username, photo: this.callback.photo_url },
+      });
       // gets user as an input
       // id, first_name, last_name, username,
       // photo_url, auth_date and hash

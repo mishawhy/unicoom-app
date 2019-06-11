@@ -35,10 +35,17 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.all('/*', function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'X-Requested-With');
+  next();
+});
+app.use('/api', indexRouter);
 app.use(history({ verbose: true }));
 app.use(express.static(path.join(__dirname, staticFolder)));
 
 const { COOKIE_EXPIRATION_MS } = process.env;
+
 app.use(
   session({
     store: redisStore,
@@ -61,7 +68,7 @@ app.use(
 //   })
 // );
 
-initAuthMiddleware(app);
+// initAuthMiddleware(app);
 
 // Middleware used for setting error and success messages as available in _ejs_ templates
 app.use((req, res, next) => {
@@ -72,8 +79,6 @@ app.use((req, res, next) => {
   }
   next();
 });
-
-app.use('/api', indexRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res) => {

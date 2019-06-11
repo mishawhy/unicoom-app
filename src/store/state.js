@@ -6,6 +6,8 @@
  */
 
 export default {
+  notifications: [],
   feed: [],
   loading: false,
+  user: sessionStorage.getItem('user') ? JSON.parse(sessionStorage.getItem('user')) : null,
 };

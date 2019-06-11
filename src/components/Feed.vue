@@ -68,10 +68,10 @@ export default {
     }
   },
   methods: {
-    beforeChange(activeIndex, oldIndex) {},
-    afterChange(activeIndex, oldIndex) {
+    beforeChange(activeIndex, oldIndex) {
       this.indicator = activeIndex;
     },
+    afterChange(activeIndex, oldIndex) {},
     playSelected(index) {
       this.$refs.swiperItem.moveTo(index);
     },

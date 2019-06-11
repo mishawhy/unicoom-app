@@ -2,25 +2,30 @@
   <div class="position-fixed fixed-top top-panel-container p-3">
     <b-button-group class="top-panel ">
       <b-button class="text-left btn-light rounded-pill btn-selected p-2 pl-3 rounded-right">
-        <b-spinner small type="grow" class=" mr-1"></b-spinner>
-        {{ name }} wait your video</b-button
+        <i class="fas fa-map-marker-alt mr-2"></i>
+        Kyiv, Ukraine</b-button
       >
 
-      <b-button class="w-30 btn-light btn-close rounded-pill p-1" @click="goToEnter">×</b-button>
+      <b-button
+        class="w-30 btn-light btn-close rounded-pill p-1 text-right pr-2"
+        @click="goToEnter"
+      >
+        <b-img v-bind="mainProps" :src="user.photo" rounded="circle" alt="Circle image"></b-img>
+      </b-button>
     </b-button-group>
   </div>
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex';
+
 export default {
   data() {
     return {
-      name: '',
+      mainProps: { width: 35, height: 35, class: 'm1' },
     };
   },
-  mounted() {
-    this.name = this.$route.query.name;
-  },
+  computed: mapState(['user']),
   methods: {
     playSelected() {
       this.play = !this.play;

@@ -1,9 +1,9 @@
 <template>
   <div class="select-panel-container text-right justify-content-end">
     <div class="mb-0 p-0">
-      <v-touch v-on:press="slkt">
+      <v-touch v-on:tap="slkt">
         <a class="btn-slkt mt-0 text-left">
-          <img v-if="!select" :src="btnIcon" width="70" />
+          <img v-if="!select" :src="btnActive" width="70" />
 
           <transition name="bounce">
             <img v-if="select" :src="btnActive" width="70" />
@@ -72,7 +72,8 @@ export default {
   }
 }
 .btn-slkt {
-  padding-left: 50px;
+  padding-left: 30px;
+  padding-top: 0px;
   padding-right: 20px;
   width: 220px;
 }

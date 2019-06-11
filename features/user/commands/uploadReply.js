@@ -18,20 +18,20 @@ async function uploadVideo(req, res) {
     crop: 'fill',
   });
   const options = {
-    title: req.body.title,
+    challenge: req.body.challenge,
     creator: user.id,
     srcMp4: src,
     poster,
   };
   try {
-    challenge = await challengeRepo.createChallenge(options);
+    reply = await challengeRepo.replyChallenge(options);
   } catch (error) {
-    challenge = error;
+    reply = error;
   }
-  console.log(challenge);
+  console.log(reply);
 
   res.json({
-    ...challenge,
+    ...reply,
   });
 }
 
