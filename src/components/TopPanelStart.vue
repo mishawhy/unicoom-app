@@ -6,12 +6,7 @@
         Kyiv, Ukraine</b-button
       >
 
-      <b-button
-        class="w-30 btn-light btn-close rounded-pill p-1 text-right pr-2"
-        @click="goToEnter"
-      >
-        <b-img v-bind="mainProps" :src="user.photo" rounded="circle" alt="Circle image"></b-img>
-      </b-button>
+      <b-button class="w-30 btn-light btn-close rounded-pill p-1" @click="goToEnter">×</b-button>
     </b-button-group>
   </div>
 </template>

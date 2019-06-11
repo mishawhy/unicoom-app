@@ -1,12 +1,12 @@
 <template>
   <div class="position-fixed fixed-bottom text-center border-white p-3">
     <h3 class="text-white mb-5">Meet easy with people nearby</h3>
-    <vue-telegram-login
+    <!-- <vue-telegram-login
       mode="redirect"
       telegram-login="slktbot"
       redirect-url="https://slkt-dev.herokuapp.com/api/auth/telegram"
-    />
-    <!-- <a class="btn btn-primary" @click="showUserTest">Telegram test</a> -->
+    /> -->
+    <a class="btn btn-primary" @click="showUserTest">Telegram test</a>
   </div>
 </template>
 

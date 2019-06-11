@@ -92,7 +92,7 @@ export default {
       formData.append('file', this.file);
       this.loading = true;
       axios
-        .post(`${process.env.API_ENDPOINT}/api/publish/new`, formData, {
+        .post(`${process.env.VUE_APP_ENDPOINT}/api/publish/new`, formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },

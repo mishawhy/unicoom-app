@@ -21,6 +21,7 @@ export default {
     TopLogoHeader,
   },
   async mounted() {
+    console.log(process.env.NODE_ENV, process.env.VUE_APP_ENDPOINT);
     await this.logout();
   },
   methods: {
