@@ -4,7 +4,7 @@
       large
       style="width: 3rem; height: 3rem;"
       type="grow"
-      class="text-white mr-1"
+      class="text-white mr-1 mt-4"
       v-if="loading"
     ></b-spinner>
     <TopPanelStart v-if="!loading" />
