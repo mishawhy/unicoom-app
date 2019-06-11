@@ -40,10 +40,10 @@ app.all('/*', function(req, res, next) {
   res.header('Access-Control-Allow-Headers', 'X-Requested-With');
   next();
 });
-app.use('/api', indexRouter);
 app.use(history({ verbose: true }));
 app.use(express.static(path.join(__dirname, staticFolder)));
 
+app.use('/api', indexRouter);
 const { COOKIE_EXPIRATION_MS } = process.env;
 
 app.use(
