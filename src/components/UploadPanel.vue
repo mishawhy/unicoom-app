@@ -2,8 +2,13 @@
   <div class="select-panel-container position-fixed fixed-bottom text-center justify-content-end">
     <div class="mb-0 p-0">
       <span v-if="!loading">
-        <h4 class="text-white mb-5" v-for="template in templates">"{{ template.text }}"</h4>
-        <b-button pill class="pl-3 pr-3 mb-4" :active="false" variant="dark" @click="nextTemplates"
+        <h4 class=" mb-5" v-for="template in templates">"{{ template.text }}"</h4>
+        <b-button
+          pill
+          class="pl-3 template-btn pr-3 mb-4"
+          :active="false"
+          variant="light"
+          @click="nextTemplates"
           >What to say for start?</b-button
         >
       </span>
@@ -22,22 +27,22 @@
         large
         style="width: 3rem; height: 3rem;"
         type="grow"
-        class="text-white mr-1"
+        class="mr-1"
         v-if="loading"
       ></b-spinner>
 
-      <v-touch v-on:tap="upload" v-if="!loading">
+      <a v-touch:tap="upload" v-if="!loading">
         <img :src="btnIcon" width="70" />
-      </v-touch>
+      </a>
     </div>
   </div>
 </template>
 
 <script>
-import BtnUpload from '@/assets/btn-upload.png';
+import BtnUpload from '@/assets/btn-upload-black.png';
 import axios from 'axios';
 import Lottie from 'vue-lottie';
-import * as animationData from '@/plugins/lottie.json';
+import * as animationData from '@/plugins/lottie-blue.json';
 export default {
   data() {
     return {
@@ -65,25 +70,25 @@ export default {
         { text: 'Coffee meeting' },
         { text: 'Go to theatre' },
       ],
-      current: 3,
+      current: 2,
     };
   },
   computed: {
     templates: function() {
-      return this.templatesItems.slice(this.current - 3, this.current);
+      return this.templatesItems.slice(this.current - 2, this.current);
     },
   },
   methods: {
     nextTemplates() {
       if (this.templatesItems.length > this.current) {
         const dif = this.templatesItems.length - this.current;
-        if (dif < 3) {
+        if (dif < 2) {
           this.current = this.current + dif;
         } else {
-          this.current = this.current + 3;
+          this.current = this.current + 2;
         }
       } else {
-        this.current = 3;
+        this.current = 2;
       }
     },
     changeFile() {
@@ -135,6 +140,9 @@ export default {
   width: 140%;
   height: 100%;
   pointer-events: none;
+}
+.template-btn {
+  background-color: #e2e6ea !important;
 }
 .btn-upload {
   padding: 50px;

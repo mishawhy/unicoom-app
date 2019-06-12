@@ -1,35 +1,38 @@
 const cloudinary = require('cloudinary');
 const say = require('../repository');
-const user = require('../../user/repository');
 
 async function uploadVideo(req, res) {
   // console.log(req.file);
   // console.log(cloudinary);
+  // res.json({
+  //   ...cloudinary,
+  // });
   try {
-    const poster = cloudinary.url(`${req.file.public_id}.jpg`, {
+    const poster = cloudinary.url(`62531025_2339052489754701_3031537748427005020_n_s2nf1b.jpg`, {
       resource_type: 'video',
+      width: 355,
+      height: 475,
+      crop: 'fill',
+      detection: 'adv_face',
     });
     const det = await cloudinary.v2.uploader.upload(poster, { detection: 'adv_face' });
-    // res.json({
-    //   det,
-    // });
-
-    const options = {
-      creator: req.user.id,
-      publicId: req.file.public_id,
-      cloudName: 'hukuvq2x5',
-      score: 1,
-    };
-    console.log(det.info.detection);
-    if (det.info.detection.adv_face.data) {
-      const { gender, age } = det.info.detection.adv_face.data[0].attributes;
-      await user.updateAgeAndGender({ age, gender }, req.user.id);
+    if (det.info.detection.adv_face.data[0]) {
+      res.json({
+        age: det.info.detection.adv_face.data[0].attributes.age,
+        gender: det.info.detection.adv_face.data[0].attributes.gender,
+      });
     }
 
-    const sayResult = await say.create(options);
-    res.json({
-      ...sayResult,
-    });
+    // const options = {
+    //   creator: req.user.id,
+    //   publicId: req.file.public_id,
+    //   cloudName: '',
+    // };
+    //
+    // say = await say.create(options);
+    // res.json({
+    //   ...say,
+    // });
   } catch (e) {
     console.log(e);
   }

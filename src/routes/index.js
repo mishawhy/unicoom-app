@@ -20,12 +20,4 @@ export default [
     },
     props: true,
   },
-  {
-    path: ROUTE.CENTER_PATH,
-    component: () => import('@/screens/MainCenter.vue'),
-    meta: {
-      auth: true,
-    },
-    props: true,
-  },
 ];

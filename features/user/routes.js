@@ -10,13 +10,12 @@ const { getUser } = require('./commands/load-page');
 
 debug('upload');
 
-// function isAuthenticated(req, res, next) {
-//   if (req.user && req.isAuthenticated()) {
-//     return next();
-//   }
-//
-//   return res.redirect('/login');
-// }
+function isAuthenticated(req, res, next) {
+  if (req.user && req.isAuthenticated()) {
+    return next();
+  }
+  return res.redirect('/enter');
+}
 
 module.exports = (router, middlewares = []) => {
   // router.post(
@@ -27,7 +26,12 @@ module.exports = (router, middlewares = []) => {
   //   wrap(uploadReply)
   // );
 
-  router.get('/user/get', middlewares.map(middleware => wrap(middleware)), wrap(getUser));
+  router.get(
+    '/user/get',
+    isAuthenticated,
+    middlewares.map(middleware => wrap(middleware)),
+    wrap(getUser)
+  );
   // router.post(
   //   '/publish/new',
   //   middlewares.map(middleware => wrap(middleware)),

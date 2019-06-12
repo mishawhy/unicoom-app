@@ -4,7 +4,7 @@
       <TopLogoHeader />
       <AuthPanel />
     </div>
-    <BgFeed />
+    <!-- <BgFeed /> -->
   </div>
 </template>
 

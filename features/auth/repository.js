@@ -5,40 +5,19 @@ const knexConfig = require('../../db/knexfile');
 
 const knex = Knex(knexConfig[process.env.NODE_ENV]);
 
-async function getUserForLoginData(email, password) {
+async function createUser({ name, username, email, password }) {
+  // const hashedPass = await bcrypt.hash(password, 5);
   const [user] = await knex('users')
-    .select()
-    .where({ email })
-    .orWhere({ username: email })
-    .limit(1);
-
-  if (!user) {
-    return null;
-  }
-
-  const isPasswordValid = await bcrypt.compare(password, user.password);
-
-  if (!isPasswordValid) {
-    return null;
-  }
-
-  return {
-    id: user.id,
-    username: user.email,
-    created_at: user.created_at,
-  };
-}
-
-async function getUser(query) {
-  const [user] = await knex('users')
-    .select()
-    .where(query)
-    .limit(1);
+    .insert({
+      telegramId,
+      name,
+      photo,
+      username,
+      created_at: new Date(),
+      updated_at: new Date(),
+    })
+    .returning(['email', 'name', 'username']);
   return user;
-}
-
-async function getUserById(id) {
-  return getUser({ id });
 }
 
 module.exports = {

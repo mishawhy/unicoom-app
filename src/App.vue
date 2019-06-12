@@ -13,7 +13,7 @@ export default {
 <style lang="scss">
 body {
   margin: 0;
-  background-color: black;
+  background-color: #f9f9f9;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -24,7 +24,7 @@ html {
 }
 #app {
   position: relative;
-  background-color: black;
+  background-color: #f9f9f9;
   max-height: 100vh;
   height: 100vh;
   overflow-x: hidden;

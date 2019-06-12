@@ -9,13 +9,8 @@ const debug = require('debug')('express:login');
 
 function login(req, res, next) {
   debug('login');
-  // req.session.user = req.body;
-  // res.json({
-  //   go: {
-  //     query: req.query,
-  //   },
-  // });
-  return res.redirect('/start');
+  req.logout();
+  return res.redirect('/enter');
   // res.json({ body: req.body });
 
   // return passport.authenticate('local', (error, user) => {

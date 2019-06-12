@@ -1,29 +1,28 @@
 <template>
   <div class="page">
-    <v-touch
-      v-on:tap="onTap"
-      v-on:swipeleft="onSwipeLeft"
-      v-on:press="onPress"
-      v-on:pressup="onPressUp"
+    <a
+      v-touch:tap="onTap"
+      v-touch:swipeleft="onSwipeLeft"
+      v-touch:press="onPress"
+      v-touch:pressup="onPressUp"
     >
-      {{ video.posters }}
       <vue-plyr ref="plyr" :options="options">
         <cld-video
-          :cloudName="video.cloud"
+          :cloudName="video.cloudName"
           :publicId="video.publicId"
           fallbackContent="Your browser does not support HTML5 video tags."
           playsinline="true"
           autoplay="true"
         >
-          <cld-transformation crop="fill" height="630" width="355" quality="70" />
+          <cld-transformation crop="fill" :height="height" :width="width" quality="90" />
           <cld-poster>
-            <cld-transformation crop="fill" height="630" width="355" />
+            <cld-transformation crop="fill" :height="height" :width="width" />
             <cld-transformation v-bind:dpr="devicePixelRatio" />
           </cld-poster>
         </cld-video>
       </vue-plyr>
-      <SelectPanel :telegram="video.telegram" />
-    </v-touch>
+      <SelectPanel :telegram="video.username" />
+    </a>
   </div>
 </template>
 
@@ -63,6 +62,8 @@ export default {
   },
   data() {
     return {
+      width: window.innerWidth,
+      height: window.innerHeight,
       options: {
         controls: [],
         hideControls: true,
@@ -124,7 +125,7 @@ export default {
   justify-content: top;
   font-size: 100px;
   color: #fff;
-  max-width: 400px;
+  max-width: 100%;
   background-color: black;
 }
 .plyr {

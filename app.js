@@ -11,7 +11,7 @@ const geolang = require('geolang-express');
 const RedisStore = require('connect-redis')(session);
 const moment = require('moment');
 const history = require('connect-history-api-fallback');
-const initAuthMiddleware = require('./features/login/init-auth-middleware');
+const initAuthMiddleware = require('./features/auth/init-auth-middleware');
 const indexRouter = require('./routes/index');
 
 const redisStoreConfig = {
@@ -40,20 +40,14 @@ app.all('/*', function(req, res, next) {
   res.header('Access-Control-Allow-Headers', 'X-Requested-With');
   next();
 });
-
-app.use('/api', indexRouter);
-app.use(history({ verbose: true }));
-app.use(express.static(path.join(__dirname, staticFolder)));
-
 const { COOKIE_EXPIRATION_MS } = process.env;
-
 app.use(
   session({
     store: redisStore,
     secret: 'keyboard cat',
     name: process.env.SESSION_COOKIE_NAME,
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     cookie: {
       // secure: process.env.NODE_ENV === 'production',
       secure: false,
@@ -62,14 +56,17 @@ app.use(
     },
   })
 );
+initAuthMiddleware(app);
+app.use('/api', indexRouter);
+app.use(history({ verbose: true }));
+app.use(express.static(path.join(__dirname, staticFolder)));
+
 // sapp.use(express.static(`${__dirname}/${staticFolder}`));
 // app.use(
 //   geolang({
 //     siteLangs: ['en', 'ru', 'ua'],
 //   })
 // );
-
-// initAuthMiddleware(app);
 
 // Middleware used for setting error and success messages as available in _ejs_ templates
 app.use((req, res, next) => {

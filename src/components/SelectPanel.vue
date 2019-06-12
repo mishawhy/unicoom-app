@@ -1,15 +1,13 @@
 <template>
   <div class="select-panel-container text-right justify-content-end">
     <div class="mb-0 p-0">
-      <v-touch v-on:tap="slkt">
-        <a class="btn-slkt mt-0 text-left">
-          <img v-if="!select" :src="btnActive" width="70" />
+      <a class="btn-slkt mt-0 text-left" v-touch:tap="slkt">
+        <img v-if="!select" :src="btnIcon" width="70" />
 
-          <transition name="bounce">
-            <img v-if="select" :src="btnActive" width="70" />
-          </transition>
-        </a>
-      </v-touch>
+        <transition name="bounce">
+          <img v-if="select" :src="btnActive" width="70" />
+        </transition>
+      </a>
     </div>
     <div class="mt-0 p-0">
       <a :href="'https://t.me/' + telegram" class="btn btn-lg google"

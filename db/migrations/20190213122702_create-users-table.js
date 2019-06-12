@@ -5,11 +5,17 @@ exports.up = async function up(knex) {
       .unsigned()
       .notNullable()
       .primary(['user_job_pkey']);
-    table.string('email', 60).notNullable();
+    table
+      .integer('telegramId')
+      .unsigned()
+      .notNullable();
+    table
+      .integer('score')
+      .notNullable()
+      .defaultTo(1);
     table.string('username', 60).notNullable();
     table.string('name', 60).notNullable();
-    table.string('password', 60).notNullable();
-    table.timestamp('email_verified_at').defaultTo(knex.fn.now());
+    table.string('photo', 60).notNullable();
     table
       .timestamp('created_at')
       .notNullable()
@@ -19,7 +25,7 @@ exports.up = async function up(knex) {
       .notNullable()
       .defaultTo(knex.fn.now());
 
-    table.unique('email');
+    table.unique('telegramId');
     table.unique('username');
   });
 };

@@ -4,7 +4,10 @@
 // const isAuthenticated = require('./is-authenticated');
 
 async function getUser(req, res) {
-  res.json({ photo: 'https://t.me/i/userpic/320/yefimets.jpg', username: 'yefimets' });
+  res.json({
+    ...req.user,
+  });
+  // res.json({ photo: 'https://t.me/i/userpic/320/yefimets.jpg', username: 'yefimets' });
 }
 
 // async function loadItem(req, res, next) {

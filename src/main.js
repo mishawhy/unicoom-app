@@ -12,15 +12,17 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import '@fortawesome/fontawesome-free/css/all.css';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import Vue2TouchEvents from 'vue2-touch-events';
 import App from './App.vue';
 
 import { router } from './plugins/vue-router';
 
+Vue.use(Vue2TouchEvents, { name: 'v-touch' });
 Axios.defaults.baseURL = process.env.API_ENDPOINT;
 
 library.add(faCoffee);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
-Vue.use(VueTouch, { name: 'v-touch' });
+// Vue.use(VueTouch);
 Vue.use(VuePlyr);
 Vue.use(BootstrapVue);
 Vue.config.productionTip = false;

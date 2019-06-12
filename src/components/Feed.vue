@@ -2,7 +2,7 @@
   <div>
     <TopPanel v-on:playSelected="playSelected" />
     <swiper
-      v-if="!loading && !error"
+      v-if="!loading"
       :page-transition="pageTransition"
       :loop="loop"
       :autoplay="autoplay"
@@ -13,7 +13,7 @@
       ref="swiperItem"
     >
       <swiper-item v-for="(item, index) in feed" :key="index">
-        <Want :index="index + 1" :video="item" :current="indicator" @next="next" />
+        <Say :index="index + 1" :video="item" :current="indicator" @next="next" />
       </swiper-item>
     </swiper>
   </div>
@@ -23,8 +23,8 @@
 import TopPanel from '@/components/TopPanel';
 import { Swiper, SwiperItem } from 'vue-h5-swiper';
 import SelectPanel from '@/components/SelectPanel';
-import Want from './Want';
-import { getFeed } from '@/services/feed';
+import Say from './Say';
+import { mapActions, mapState } from 'vuex';
 
 const PAGE_TRANSITIONS = [
   'move',
@@ -39,35 +39,29 @@ const PAGE_TRANSITIONS = [
 ];
 export default {
   components: {
-    Want,
+    Say,
     Swiper,
     SwiperItem,
     TopPanel,
   },
   data() {
     return {
-      feed: [],
       loop: true,
       autoplay: false,
       interval: 1000,
       showIndicator: false,
-      pageTransition: PAGE_TRANSITIONS[6],
+      pageTransition: PAGE_TRANSITIONS[0],
       pageTransitions: PAGE_TRANSITIONS,
       indicator: 0,
-      loading: false,
       error: '',
     };
   },
   async mounted() {
-    this.loading = true;
-    try {
-      this.feed = await getFeed();
-      this.loading = false;
-    } catch (e) {
-      this.error = 'something goes wrong';
-    }
+    this.getFeed();
   },
+  computed: mapState(['feed', 'loading']),
   methods: {
+    ...mapActions(['getFeed']),
     beforeChange(activeIndex, oldIndex) {
       this.indicator = activeIndex;
     },

@@ -12,7 +12,3 @@ export const ENTER_URL = `${ENTER_PATH}`;
 export const START = 'start';
 export const START_PATH = '/start';
 export const START_URL = `${START_PATH}`;
-// ENTER
-export const CENTER = 'center';
-export const CENTER_PATH = '/center';
-export const CENTER_URL = `${CENTER_PATH}`;

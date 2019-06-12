@@ -5,8 +5,9 @@
         <i class="fas fa-map-marker-alt mr-2"></i>
         Kyiv, Ukraine</b-button
       >
-
-      <b-button class="w-30 btn-light btn-close rounded-pill p-1" @click="goToEnter">×</b-button>
+      <b-button v-touch:tap="goToEnter" class="w-30 btn-light btn-close rounded-pill p-1"
+        >×</b-button
+      >
     </b-button-group>
   </div>
 </template>
@@ -38,6 +39,10 @@ export default {
 .btn-selected {
   border-top-right-radius: 0px !important;
   border-bottom-right-radius: 0px !important;
+}
+.btn-light {
+  background-color: #e2e6ea !important;
+  border-color: #e2e6ea !important;
 }
 .btn-close {
   border-top-left-radius: 0px !important;

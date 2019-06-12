@@ -18,7 +18,9 @@
         Find matches</b-button
       >
 
-      <b-button class="w-30 btn-light btn-close rounded-pill p-1" @click="goToStart">×</b-button>
+      <b-button v-touch:tap="goToStart" class="w-30 btn-light btn-close rounded-pill p-1"
+        >×</b-button
+      >
     </b-button-group>
   </div>
 </template>
