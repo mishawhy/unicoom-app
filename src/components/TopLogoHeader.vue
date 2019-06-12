@@ -1,7 +1,7 @@
 <template>
   <div class="position-fixed fixed-top text-center border-white p-3">
     <a href="/enter" class="btn-white">
-      <div class=" slkt-logo p-3"><img :src="logo" /></div>
+      <div class="slkt-logo p-3"><img :src="logo" /></div>
     </a>
   </div>
 </template>

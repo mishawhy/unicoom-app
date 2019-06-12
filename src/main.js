@@ -13,10 +13,12 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import '@fortawesome/fontawesome-free/css/all.css';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import Vue2TouchEvents from 'vue2-touch-events';
+import VuePhoneNumberInput from 'vue-phone-number-input';
 import App from './App.vue';
-
 import { router } from './plugins/vue-router';
+import 'vue-phone-number-input/dist/vue-phone-number-input.css';
 
+Vue.component('vue-phone-number-input', VuePhoneNumberInput);
 Vue.use(Vue2TouchEvents, { name: 'v-touch' });
 Axios.defaults.baseURL = process.env.API_ENDPOINT;
 
