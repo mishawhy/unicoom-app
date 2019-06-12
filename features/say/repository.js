@@ -25,7 +25,7 @@ async function feed(ref) {
       findGender = 'female';
     }
 
-    return await knex('says')
+    const genderResult = await knex('says')
       .select(
         { sayId: 'says.id' },
         'says.creator',
@@ -42,7 +42,12 @@ async function feed(ref) {
       .where('users.gender', findGender)
       .orderBy('created_at', 'desc')
       .innerJoin('users', 'says.creator', '=', 'users.id');
+
+    if (genderResult.length > 0) {
+      return genderResult;
+    }
   }
+
   return await knex('says')
     .select(
       { sayId: 'says.id' },
