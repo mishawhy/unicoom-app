@@ -4,7 +4,7 @@
     <vue-telegram-login
       mode="redirect"
       telegram-login="slktbot"
-      redirect-url="https://b8a47f41.ngrok.io/api/auth/telegram"
+      redirect-url="https://slkt-dev.herokuapp.com/api/auth/telegram"
     />
   </div>
 </template>
