@@ -1,27 +1,27 @@
 <template>
   <div class=" d-flex header-box text-center justify-content-between p-3 w-100 ">
-    <b-link to="say" class="btn-white btn-link-2  d-flex w-20">
-      <div class="slkt-logo"><img :src="userBtn" /></div>
+    <b-link to="/" class="btn-white btn-link-2  d-flex w-20 mt-2">
+      <div class="slkt-logo"><img :src="btnSlkt" /></div>
     </b-link>
 
-    <b-link href="/enter" class="btn-white btn-link-2 d-flex text-right w-20">
-      <div class="slkt-logo"><img :src="slktActive" /></div>
+    <b-link to="say" class="btn-white btn-link-2 d-flex w-60 mt-3">
+      <div class="slkt-logo-2"><img :src="logo" /></div>
     </b-link>
-    <b-link href="/enter" class="btn-white btn-link-2 d-flex w-60">
-      <div class="slkt-logo"><img :src="logo" /></div>
+    <b-link to="meet" class="btn-white btn-link-2 d-flex text-right w-20">
+      <div class="slkt-logo-3"><img :src="slktActive" /></div>
     </b-link>
   </div>
 </template>
 
 <script>
-import slktActive from '@/assets/slkt-text.svg';
-import SlktLogo from '@/assets/slkt-active.svg';
-import btnUser from '@/assets/btn-user.png';
+import slktLogo from '@/assets/slkt-text.svg';
+import slktActive from '@/assets/slkt-active.svg';
+import BtnSlkt from '@/assets/btn-slkt.svg';
 export default {
   data() {
     return {
-      logo: SlktLogo,
-      userBtn: btnUser,
+      logo: slktLogo,
+      btnSlkt: BtnSlkt,
       slktActive: slktActive,
     };
   },
@@ -41,13 +41,20 @@ export default {
     max-height: 100%;
     height: 100%;
   }
-  height: 30px;
+  height: 40px;
 }
 .slkt-logo-2 {
   img {
     max-height: 100%;
     height: 100%;
   }
-  height: 50px;
+  height: 20px;
+}
+.slkt-logo-3 {
+  img {
+    max-height: 100%;
+    height: 100%;
+  }
+  height: 45px;
 }
 </style>

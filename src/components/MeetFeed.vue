@@ -1,11 +1,10 @@
 <template>
   <div>
+    <h2 class="font-weight-bold m-3">Встречи</h2>
     <!-- <TopPanel v-on:playSelected="playSelected" /> -->
     <swiper
       v-if="!loading"
       :page-transition="pageTransition"
-      :loop="loop"
-      :autoplay="autoplay"
       :interval="interval"
       :show-indicator="showIndicator"
       @beforeChange="beforeChange"
@@ -13,18 +12,18 @@
       ref="swiperItem"
     >
       <swiper-item v-for="(item, index) in feed" :key="index">
-        <Say :index="index + 1" :video="item" :current="indicator" @next="next" />
+        <MeetSay :index="index + 1" :video="item" :current="indicator" @next="next" />
       </swiper-item>
     </swiper>
-    <SelectPanel v-on:select="next" />
+    <MeetPanel v-on:select="next" />
   </div>
 </template>
 
 <script>
 import TopPanel from '@/components/TopPanel';
 import { Swiper, SwiperItem } from 'vue-h5-swiper';
-import SelectPanel from '@/components/SelectPanel';
-import Say from './Say';
+import MeetPanel from '@/components/MeetPanel';
+import MeetSay from './MeetSay';
 import { mapActions, mapState } from 'vuex';
 
 const PAGE_TRANSITIONS = [
@@ -40,11 +39,11 @@ const PAGE_TRANSITIONS = [
 ];
 export default {
   components: {
-    Say,
+    MeetSay,
     Swiper,
     SwiperItem,
     TopPanel,
-    SelectPanel,
+    MeetPanel,
   },
   data() {
     return {

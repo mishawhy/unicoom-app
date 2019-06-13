@@ -1,32 +1,27 @@
 <template>
-  <div class="select-panel-container align-items-end text-right pr-3">
+  <div class="meet-panel-container align-items-end text-right pr-3">
     <div class="mb-0 p-0">
-      <a class="btn-slkt mt-0 text-left" v-touch:tap="slkt">
-        <img v-if="!select" :src="btnIcon" width="70" />
-
-        <transition name="bounce">
-          <img v-if="select" :src="btnIcon" width="70" />
-        </transition>
+      <a class="p-3 text-dark" href="whatsapp://send?phone=+380688880896">
+        <i class="fab fa-whatsapp" style="font-size:50px"></i>
       </a>
+      <a class="p-3 text-dark" href="viber://chat?number=+380688880896">
+        <i class="fab fa-viber" style="font-size:50px"></i>
+      </a>
+
+      <!-- <a class="btn-slkt mt-0 text-left" href="viber://chat?number=+380688880896">
+        <img :src="btnPhone" width="55" />
+      </a> -->
     </div>
   </div>
 </template>
 
 <script>
-import BtnSlkt from '@/assets/btn-slkt.svg';
-import BtnActive from '@/assets/btn-slkt-active.svg';
+import BtnPhone from '@/assets/btn-phone.svg';
 export default {
   data() {
     return {
-      btnIcon: BtnSlkt,
-      btnActive: BtnActive,
-      select: false,
+      btnPhone: BtnPhone,
     };
-  },
-  props: {
-    telegram: {
-      type: String,
-    },
   },
   methods: {
     slkt() {
@@ -73,12 +68,12 @@ export default {
   padding-right: 20px;
   width: 220px;
 }
-.select-panel-container {
+.meet-panel-container {
   z-index: 1000;
   width: 100%;
   position: absolute;
   // border: 1px solid red;
-  bottom: 7vh;
+  bottom: 2vh;
 }
 .select-panel {
   border-radius: 100;

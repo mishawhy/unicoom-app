@@ -4,7 +4,7 @@
     v-touch:swipeleft="onSwipeLeft"
     v-touch:press="onPress"
     v-touch:pressup="onPressUp"
-    class="shadow-sm d-flex align-items-stretch m-2 page"
+    class="shadow-sm d-flex align-items-stretch m-2 meet-say"
   >
     <vue-plyr ref="plyr" :options="options">
       <cld-video
@@ -25,7 +25,6 @@
 </template>
 
 <script>
-import SelectPanel from '@/components/SelectPanel';
 import { CldContext, CldImage, CldPoster, CldVideo, CldTransformation } from 'cloudinary-vue';
 
 export default {
@@ -74,7 +73,6 @@ export default {
     };
   },
   components: {
-    SelectPanel,
     CldPoster,
     CldContext,
     CldImage,
@@ -83,7 +81,7 @@ export default {
   },
   mounted() {
     this.player.on('ended', () => {
-      this.$emit('next');
+      // this.$emit('next');
     });
   },
   methods: {
@@ -112,7 +110,7 @@ export default {
 </script>
 
 <style lang="scss">
-.page {
+.meet-say {
   // height: 100%;
   // height: 100%;
   // padding-bottom: 0;
@@ -125,7 +123,7 @@ export default {
   // max-width: 350px;
   overflow-y: hidden;
   border-radius: 10px;
-  max-height: 72vh !important;
+  max-height: 55vh !important;
 }
 .plyr {
   margin: 0px auto;

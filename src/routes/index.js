@@ -2,8 +2,15 @@ import * as ROUTE from '@/constant/routes';
 
 export default [
   {
-    path: ROUTE.MAIN_PATH,
-    component: () => import('@/screens/Main.vue'),
+    path: ROUTE.SELECT_PATH,
+    component: () => import('@/screens/Select.vue'),
+    meta: {
+      auth: true,
+    },
+  },
+  {
+    path: ROUTE.MEET_PATH,
+    component: () => import('@/screens/Meet.vue'),
     meta: {
       auth: true,
     },
