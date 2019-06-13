@@ -1,7 +1,7 @@
 <template>
   <div class="position-fixed fixed-bottom text-center border-white p-3 pb-5">
     <div v-if="!confirmation">
-      <h3 class="mb-5">Meet easy <br />with people nearby</h3>
+      <h3 class="mb-5">Выбирайте людей<br />для реальных встреч</h3>
       <!-- <vue-telegram-login
       mode="redirect"
       telegram-login="slktbot"
@@ -21,7 +21,7 @@
       </b-button> -->
     </div>
     <div v-if="confirmation">
-      <h3 class="mb-5">Enter SMS code</h3>
+      <h5 class="mb-5">Введите код с смс</h5>
       <!-- <vue-telegram-login
       mode="redirect"
       telegram-login="slktbot"
@@ -31,11 +31,18 @@
         v-model="confirmationCode"
         type="tel"
         size="lg"
-        class=" text-center"
-        placeholder="5 digits code"
+        pill
+        class="shadow-sm rounded text-center"
+        placeholder="5 цифр"
       ></b-form-input>
-      <b-button v-touch:tap="goToStart" id="bt" class="btn btn-dark rounded mt-3 btn-lg w-100">
-        Start
+      <b-button
+        v-touch:tap="goToStart"
+        id="bt"
+        variant="dark"
+        pill
+        class="shadow mt-3 btn-lg w-100"
+      >
+        Подтвердить
       </b-button>
     </div>
   </div>
@@ -62,7 +69,7 @@ export default {
     },
     goToStart() {
       console.log('s2');
-      this.$router.push({ path: '/start' });
+      this.$router.push({ path: '/say' });
     },
   },
   components: {

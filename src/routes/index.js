@@ -13,8 +13,8 @@ export default [
     component: () => import('@/screens/Enter.vue'),
   },
   {
-    path: ROUTE.START_PATH,
-    component: () => import('@/screens/Start.vue'),
+    path: ROUTE.SAY_PATH,
+    component: () => import('@/screens/Say.vue'),
     meta: {
       auth: true,
     },

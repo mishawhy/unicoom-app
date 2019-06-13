@@ -24,11 +24,11 @@ html {
 }
 #app {
   position: relative;
-  background-color: #f9f9f9;
-  max-height: 100vh;
-  height: 100vh;
-  overflow-x: hidden;
-  max-width: 400px;
+  background-color: red;
+  // max-height: 100vh;
+  // height: 100vh;
+  // overflow-x: hidden;
+  // max-width: 400px;
   margin: 0px auto;
 }
 </style>

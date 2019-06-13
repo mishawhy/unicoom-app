@@ -1,6 +1,16 @@
 <template>
-  <div class="position-fixed fixed-top top-panel-container p-3">
-    <b-button-group class="top-panel ">
+  <div class="position-fixed fixed-top top-panel-container p-3 text-left">
+    <h6 class="mb-3 mt-2 ml-3 font-weight-bold">Место встречи?</h6>
+    <b-button
+      variant="white"
+      size="lg"
+      pill
+      class="text-left shadow-sm  btn-selected p-2 w-100 font-weight-bolder"
+    >
+      <i class="fas fa-map-marker-alt mr-2 ml-2" style="font-size: 16px"></i>
+      Киев</b-button
+    >
+    <!-- <b-button-group class="top-panel ">
       <b-button class="text-left btn-light rounded-pill btn-selected p-2 pl-3 rounded-right">
         <i class="fas fa-map-marker-alt mr-2"></i>
         Kyiv, Ukraine</b-button
@@ -8,7 +18,7 @@
       <b-button v-touch:tap="goToEnter" class="w-30 btn-light btn-close rounded-pill p-1"
         >×</b-button
       >
-    </b-button-group>
+    </b-button-group> -->
   </div>
 </template>
 
@@ -18,6 +28,7 @@ import { mapState, mapActions } from 'vuex';
 export default {
   data() {
     return {
+      text1: 'Киев',
       mainProps: { width: 35, height: 35, class: 'm1' },
     };
   },
@@ -37,8 +48,7 @@ export default {
 
 <style lang="scss">
 .btn-selected {
-  border-top-right-radius: 0px !important;
-  border-bottom-right-radius: 0px !important;
+  background-color: white;
 }
 .btn-light {
   background-color: #e2e6ea !important;

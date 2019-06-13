@@ -1,15 +1,17 @@
 <template>
   <div class="select-panel-container position-fixed fixed-bottom text-center justify-content-end">
-    <div class="mb-0 p-0">
+    <div class="mb-0 p-3 pb-0">
       <span v-if="!loading">
-        <h4 class=" mb-5" v-for="template in templates">"{{ template.text }}"</h4>
+        <h4 class=" mb-5 font-weight-normal" v-for="template in templates">
+          "{{ template.text }}"
+        </h4>
         <b-button
           pill
           class="pl-3 template-btn pr-3 mb-4"
           :active="false"
           variant="light"
           @click="nextTemplates"
-          >What to say for start?</b-button
+          >Что сказать?</b-button
         >
       </span>
       <lottie v-if="!loading" :options="defaultOptions" :height="100" :width="700" />
@@ -30,10 +32,20 @@
         class="mr-1"
         v-if="loading"
       ></b-spinner>
-
-      <a v-touch:tap="upload" v-if="!loading">
+      <b-button
+        pill
+        variant="dark"
+        size="lg"
+        class="w-100 p-3 text-left font-weight-bolder shadow"
+        v-touch:tap="upload"
+        v-if="!loading"
+      >
+        <i class="fas fa-video mr-2 ml-3"></i>
+        Сказать привет
+      </b-button>
+      <!-- <a >
         <img :src="btnIcon" width="70" />
-      </a>
+      </a> -->
     </div>
   </div>
 </template>
@@ -61,34 +73,36 @@ export default {
       },
       animationSpeed: 1,
       templatesItems: [
-        { text: 'Quick business talk about local shares market' },
-        { text: 'Just talk with hookhah' },
-        { text: 'Watch a film today evening' },
-        { text: 'Go to the pool party' },
-        { text: 'Drink cocktail' },
-        { text: 'Beach club relax day' },
-        { text: 'Coffee meeting' },
-        { text: 'Go to theatre' },
+        { text: 'Привет, хочу на концерт Монатика' },
+        { text: 'Привет, настроение выпить что-то' },
+        { text: 'Привет, хочу вечером покурить кальян' },
+        { text: 'Привет, скучно, хочу прогулятся' },
+        { text: 'Привет, было бы неплохо поболтать за кофе' },
+        { text: 'Привет, настроение потусить где-то' },
+        { text: 'Привет, хочу на суши' },
+        { text: 'Привет, настроение посмотреть фильм' },
+        { text: 'Привет, хочу вечером погулять на контрактовой' },
+        { text: 'Привет, сегодня пью коктейли, много' },
       ],
-      current: 2,
+      current: 1,
     };
   },
   computed: {
     templates: function() {
-      return this.templatesItems.slice(this.current - 2, this.current);
+      return this.templatesItems.slice(this.current - 1, this.current);
     },
   },
   methods: {
     nextTemplates() {
       if (this.templatesItems.length > this.current) {
         const dif = this.templatesItems.length - this.current;
-        if (dif < 2) {
+        if (dif < 1) {
           this.current = this.current + dif;
         } else {
-          this.current = this.current + 2;
+          this.current = this.current + 1;
         }
       } else {
-        this.current = 2;
+        this.current = 1;
       }
     },
     changeFile() {
@@ -121,7 +135,8 @@ export default {
     //   console.log(file);
     // },
     upload() {
-      document.getElementById('fileUpload').click();
+      this.$router.push({ path: '/' });
+      // document.getElementById('fileUpload').click();
     },
   },
   name: 'UploadPanel',

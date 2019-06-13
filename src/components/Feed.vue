@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TopPanel v-on:playSelected="playSelected" />
+    <!-- <TopPanel v-on:playSelected="playSelected" /> -->
     <swiper
       v-if="!loading"
       :page-transition="pageTransition"
@@ -50,7 +50,7 @@ export default {
       autoplay: false,
       interval: 1000,
       showIndicator: false,
-      pageTransition: PAGE_TRANSITIONS[0],
+      pageTransition: PAGE_TRANSITIONS[3],
       pageTransitions: PAGE_TRANSITIONS,
       indicator: 0,
       error: '',

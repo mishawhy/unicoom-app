@@ -17,7 +17,9 @@ import VuePhoneNumberInput from 'vue-phone-number-input';
 import App from './App.vue';
 import { router } from './plugins/vue-router';
 import 'vue-phone-number-input/dist/vue-phone-number-input.css';
+import AutocompleteVue from 'autocomplete-vue';
 
+Vue.component('autocomplete-vue', AutocompleteVue);
 Vue.component('vue-phone-number-input', VuePhoneNumberInput);
 Vue.use(Vue2TouchEvents, { name: 'v-touch' });
 Axios.defaults.baseURL = process.env.API_ENDPOINT;

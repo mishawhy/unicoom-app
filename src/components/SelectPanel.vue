@@ -1,5 +1,5 @@
 <template>
-  <div class="select-panel-container text-right justify-content-end">
+  <div class="d-flex position-absolute fixed-bottom align-items-end">
     <div class="mb-0 p-0">
       <a class="btn-slkt mt-0 text-left" v-touch:tap="slkt">
         <img v-if="!select" :src="btnIcon" width="70" />
@@ -9,11 +9,11 @@
         </transition>
       </a>
     </div>
-    <div class="mt-0 p-0">
+    <!-- <div class="mt-0 p-0">
       <a :href="'https://t.me/' + telegram" class="btn btn-lg google"
         ><i class="fab fa-telegram"></i
       ></a>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -78,17 +78,11 @@ export default {
 .select-panel-container {
   z-index: 1000;
   width: 100%;
-  bottom: 50px;
   position: absolute;
+  bottom: 30px;
 }
 .select-panel {
   border-radius: 100;
   width: 50%;
-}
-.google {
-  font-size: 40px;
-  color: white;
-  width: 100px;
-  margin-top: -120px;
 }
 </style>

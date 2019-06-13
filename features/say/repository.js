@@ -14,39 +14,39 @@ async function create(params) {
   return say;
 }
 async function feed(ref) {
-  const [user] = await knex('users')
-    .where('id', ref.id)
-    .select('gender');
-  if (user.gender == 'male' || user.gender == 'female') {
-    let findGender;
-    if (user.gender == 'female') {
-      findGender = 'male';
-    } else {
-      findGender = 'female';
-    }
-
-    const genderResult = await knex('says')
-      .select(
-        { sayId: 'says.id' },
-        'says.creator',
-        'users.photo',
-        'users.name',
-        'users.username',
-        'users.id',
-        'users.gender',
-        'users.age',
-        'says.cloudName',
-        'says.publicId',
-        'says.created_at'
-      )
-      .where('users.gender', findGender)
-      .orderBy('created_at', 'desc')
-      .innerJoin('users', 'says.creator', '=', 'users.id');
-
-    if (genderResult.length > 0) {
-      return genderResult;
-    }
-  }
+  // const [user] = await knex('users')
+  //   .where('id', ref.id)
+  //   .select('gender');
+  // if (user.gender == 'male' || user.gender == 'female') {
+  //   let findGender;
+  //   if (user.gender == 'female') {
+  //     findGender = 'male';
+  //   } else {
+  //     findGender = 'female';
+  //   }
+  //
+  //   const genderResult = await knex('says')
+  //     .select(
+  //       { sayId: 'says.id' },
+  //       'says.creator',
+  //       'users.photo',
+  //       'users.name',
+  //       'users.username',
+  //       'users.id',
+  //       'users.gender',
+  //       'users.age',
+  //       'says.cloudName',
+  //       'says.publicId',
+  //       'says.created_at'
+  //     )
+  //     .where('users.gender', findGender)
+  //     .orderBy('created_at', 'desc')
+  //     .innerJoin('users', 'says.creator', '=', 'users.id');
+  //
+  //   if (genderResult.length > 0) {
+  //     return genderResult;
+  //   }
+  // }
 
   return await knex('says')
     .select(

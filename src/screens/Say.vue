@@ -1,7 +1,7 @@
 <template>
   <div>
     <TopPanelStart />
-    <UploadPanel v-if="!loading" />
+    <UploadPanel />
   </div>
 </template>
 

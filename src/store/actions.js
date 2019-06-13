@@ -38,7 +38,7 @@ export default {
 
         commit(SET_INITIAL_STATE, {
           key: 'feed',
-          value: response,
+          value: [...response, ...response],
         });
 
         commit(LOADING_FALSE);

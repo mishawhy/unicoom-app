@@ -46,7 +46,7 @@ module.exports = (router, middlewares = []) => {
     wrap(uploadChallenge)
   );
   router.get('/det', middlewares.map(middleware => wrap(middleware)), wrap(detection));
-  router.get('/feed', isAuthenticated, middlewares.map(middleware => wrap(middleware)), wrap(feed));
+  router.get('/feed', middlewares.map(middleware => wrap(middleware)), wrap(feed));
   // router.get('/', isAuthenticated, middlewares.map(middleware => wrap(middleware)), wrap(loadPage));
   // router.get('/challenge/:id', middlewares.map(middleware => wrap(middleware)), wrap(loadItem));
   // router.get('/u/:username', middlewares.map(middleware => wrap(middleware)), wrap(loadUserItems));

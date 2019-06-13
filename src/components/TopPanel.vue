@@ -2,7 +2,7 @@
   <div class="position-fixed fixed-top top-panel-container p-3">
     <b-button-group class="top-panel ">
       <b-button
-        class="text-left btn-light rounded-pill btn-selected p-2 pl-3 rounded-right"
+        class="text-left btn-light rounded-pill btn-selected-2 p-2 pl-3 rounded-right"
         v-if="!wait"
         @click="playSelected"
       >
@@ -11,7 +11,7 @@
       >
 
       <b-button
-        class="text-left btn-light rounded-pill btn-selected p-2 pl-3 rounded-right"
+        class="text-left btn-light  rounded-pill btn-selected-2 p-2 pl-3 rounded-right"
         v-if="wait"
       >
         <b-spinner small type="grow" class=" mr-1"></b-spinner>
@@ -52,7 +52,7 @@ export default {
 </script>
 
 <style lang="scss">
-.btn-selected {
+.btn-selected-2 {
   border-top-right-radius: 0px !important;
   border-bottom-right-radius: 0px !important;
 }
