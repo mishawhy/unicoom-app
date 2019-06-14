@@ -6,6 +6,11 @@
     v-touch:pressup="onPressUp"
     class="shadow-sm d-flex align-items-stretch m-2 page"
   >
+    <div class="header-say position-absolute fixed-top">
+      <b-button variant="light" pill class="mt-3 shadow" style="font-size:23px"
+        >Офіціант у МакДоналдс</b-button
+      >
+    </div>
     <vue-plyr ref="plyr" :options="options">
       <cld-video
         :cloudName="video.cloudName"
@@ -112,6 +117,14 @@ export default {
 </script>
 
 <style lang="scss">
+.header-say {
+  z-index: 1000;
+  width: 100%;
+  position: absolute;
+  // border: 1px solid red;
+  bottom: 7vh;
+  // background-color: rgba(0, 0, 0, 0.3);
+}
 .page {
   // height: 100%;
   // height: 100%;
@@ -123,7 +136,7 @@ export default {
   // border-radius: 10px;
   // background-color: red;
   // max-width: 350px;
-  overflow-y: hidden;
+  overflow: hidden;
   border-radius: 10px;
   max-height: 72vh !important;
 }
@@ -134,7 +147,7 @@ export default {
   width: 100%;
   max-width: 100%;
   border-radius: 10px;
-
+  overflow: hidden;
   max-height: 100%;
   // min-width: 420px !important;
 }
@@ -142,6 +155,7 @@ export default {
 .plyr__video-wrapper {
   background-color: #f9f9f9 !important;
   border-radius: 10px;
+  overflow: hidden;
 }
 .plyr--video {
   max-height: 100%; /* or whatever value you need */
