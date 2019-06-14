@@ -8,7 +8,10 @@
       class="text-left shadow-sm  btn-selected p-2 w-100 font-weight-bolder"
     >
       <i class="fas fa-map-marker-alt mr-2 ml-2" style="font-size: 16px"></i>
-      Київ</b-button
+      Київ
+      <span class="font-weight-normal ml-2 text-secondary" style="font-size:16px"
+        >233 пропозиції</span
+      ></b-button
     >
     <!-- <b-button-group class="top-panel ">
       <b-button class="text-left btn-light rounded-pill btn-selected p-2 pl-3 rounded-right">
