@@ -4,11 +4,11 @@
       <div class="slkt-logo"><img :src="btnSlkt" /></div>
     </b-link>
 
-    <b-link to="say" class="btn-white btn-link-2 d-flex w-60 mt-3">
+    <b-link class="btn-white btn-link-2 d-flex w-60 mt-3">
       <div class="slkt-logo-2"><img :src="logo" /></div>
     </b-link>
-    <b-link to="meet" class="btn-white btn-link-2 d-flex text-right w-20">
-      <div class="slkt-logo-3"><img :src="slktActive" /></div>
+    <b-link to="say" class="text-dark border-0 d-flex text-right p-3 w-10">
+      <i class="far fa-user-circle" style="font-size:28px"></i>
     </b-link>
   </div>
 </template>
