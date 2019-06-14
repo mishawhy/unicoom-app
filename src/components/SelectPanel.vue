@@ -1,13 +1,22 @@
 <template>
-  <div class="select-panel-container align-items-end text-right pr-3">
+  <div class="select-panel-container align-items-end text-center">
     <div class="mb-0 p-0">
-      <a class="btn-slkt mt-0 text-left" v-touch:tap="slkt">
-        <img v-if="!select" :src="btnIcon" width="70" />
-
+      <!-- <a class="btn-slkt mt-0 text-left" v-touch:tap="slkt"> -->
+      <b-button
+        v-touch:tap="slkt"
+        id="bt"
+        variant="primary"
+        size="lg"
+        pill
+        class="shadow mt-3 pr-3"
+      >
+        <i v-if="!select" class="fas fa-hand-paper  mr-2 ml-2"></i>
         <transition name="bounce">
-          <img v-if="select" :src="btnIcon" width="70" />
+          <i v-if="select" class="fas fa-check mr-2 ml-2"></i>
         </transition>
-      </a>
+        Сказати привіт
+      </b-button>
+      <!-- </a> -->
     </div>
   </div>
 </template>
@@ -33,6 +42,7 @@ export default {
       this.select = true;
       setTimeout(() => {
         this.$emit('select');
+        this.select = false;
       }, 500);
     },
   },

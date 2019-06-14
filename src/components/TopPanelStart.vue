@@ -1,6 +1,6 @@
 <template>
   <div class="position-fixed fixed-top top-panel-container p-3 text-left">
-    <h6 class="mb-3 mt-2 ml-3 font-weight-bold">Место встречи?</h6>
+    <h6 class="mb-3 mt-2 ml-3 font-weight-bold">Де шукаєте роботу?</h6>
     <b-button
       variant="white"
       size="lg"
@@ -8,7 +8,7 @@
       class="text-left shadow-sm  btn-selected p-2 w-100 font-weight-bolder"
     >
       <i class="fas fa-map-marker-alt mr-2 ml-2" style="font-size: 16px"></i>
-      Киев</b-button
+      Київ</b-button
     >
     <!-- <b-button-group class="top-panel ">
       <b-button class="text-left btn-light rounded-pill btn-selected p-2 pl-3 rounded-right">
@@ -28,7 +28,7 @@ import { mapState, mapActions } from 'vuex';
 export default {
   data() {
     return {
-      text1: 'Киев',
+      text1: 'Київ',
       mainProps: { width: 35, height: 35, class: 'm1' },
     };
   },

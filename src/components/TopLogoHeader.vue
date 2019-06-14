@@ -26,6 +26,6 @@ export default {
     max-height: 100%;
     height: 100%;
   }
-  height: 120px;
+  height: 80px;
 }
 </style>

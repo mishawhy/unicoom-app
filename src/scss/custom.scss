@@ -1,2 +1,11 @@
+$primary: #00ff8d;
+
+.btn-primary {
+  color: black !important;
+}
+.btn-primary:hover,
+.btn-primary.active {
+  color: black !important;
+}
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import 'node_modules/bootstrap-vue/src/index.scss';

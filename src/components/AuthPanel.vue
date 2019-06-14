@@ -1,7 +1,7 @@
 <template>
   <div class="position-fixed fixed-bottom text-center border-white p-3 pb-5">
     <div v-if="!confirmation">
-      <h3 class="mb-5">Выбирайте людей<br />для реальных встреч</h3>
+      <h3 class="mb-5">Робота для зелених<br />у живих компаніях</h3>
       <!-- <vue-telegram-login
       mode="redirect"
       telegram-login="slktbot"
@@ -21,7 +21,7 @@
       </b-button> -->
     </div>
     <div v-if="confirmation">
-      <h5 class="mb-5">Введите код с смс</h5>
+      <h5 class="mb-5">Введіть код с смс</h5>
       <!-- <vue-telegram-login
       mode="redirect"
       telegram-login="slktbot"
@@ -38,11 +38,11 @@
       <b-button
         v-touch:tap="goToStart"
         id="bt"
-        variant="dark"
+        variant="primary"
         pill
         class="shadow mt-3 btn-lg w-100"
       >
-        Подтвердить
+        Підтвердити
       </b-button>
     </div>
   </div>

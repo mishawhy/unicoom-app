@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="font-weight-bold m-3">Встречи</h2>
+    <h2 class="font-weight-bold m-3">Співбесіди</h2>
     <!-- <TopPanel v-on:playSelected="playSelected" /> -->
     <swiper
       v-if="!loading"

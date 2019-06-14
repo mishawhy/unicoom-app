@@ -5,27 +5,43 @@ import axios from 'axios';
 //   console.log(result.data.feed);
 //   return result.data.feed;
 // }
-
+// res.cloudinary.com/hb1cxubmf/video/upload/v1560489519/.mp4
 export async function getFeed() {
   return [
     {
-      cloudName: 'hukuvq2x5',
-      publicId: '62531025_2339052489754701_3031537748427005020_n_s2nf1b',
+      cloudName: 'hb1cxubmf',
+      publicId:
+        'Dostavista_%D1%80%D0%B5%D0%BA%D0%BB%D0%B0%D0%BC%D0%B0_%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D0%B8_%D0%94%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%B8%D1%81%D1%82%D0%B0_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0_%D0%B2_%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B5_y2m7yn',
       telegram: 'yefimets',
     },
     {
-      cloudName: 'hukuvq2x5',
-      publicId: '57608605_2293918834163766_3020188508832326667_n_ykyrg5',
+      cloudName: 'hb1cxubmf',
+      publicId:
+        '%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%81%D1%82_%D0%9C%D0%B0%D0%BA%D0%B4%D0%BE%D0%BD%D0%B0%D0%BB%D0%B4%D1%81_hmmyr2',
       telegram: 'yefimets',
     },
     {
-      cloudName: 'hukuvq2x5',
-      publicId: '62599099_204900680475038_5033970712450587782_n_hu3key',
+      cloudName: 'hb1cxubmf',
+      publicId:
+        'Dostavista_%D1%80%D0%B5%D0%BA%D0%BB%D0%B0%D0%BC%D0%B0_%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D0%B8_%D0%94%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%B8%D1%81%D1%82%D0%B0_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0_%D0%B2_%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B5_y2m7yn',
       telegram: 'yefimets',
     },
     {
-      cloudName: 'hukuvq2x5',
-      publicId: '62458030_2060933817534161_5317953120318981005_n_zxwxtr',
+      cloudName: 'hb1cxubmf',
+      publicId:
+        '%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%81%D1%82_%D0%9C%D0%B0%D0%BA%D0%B4%D0%BE%D0%BD%D0%B0%D0%BB%D0%B4%D1%81_hmmyr2',
+      telegram: 'yefimets',
+    },
+    {
+      cloudName: 'hb1cxubmf',
+      publicId:
+        'Dostavista_%D1%80%D0%B5%D0%BA%D0%BB%D0%B0%D0%BC%D0%B0_%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D0%B8_%D0%94%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%B8%D1%81%D1%82%D0%B0_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0_%D0%B2_%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B5_y2m7yn',
+      telegram: 'yefimets',
+    },
+    {
+      cloudName: 'hb1cxubmf',
+      publicId:
+        '%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%81%D1%82_%D0%9C%D0%B0%D0%BA%D0%B4%D0%BE%D0%BD%D0%B0%D0%BB%D0%B4%D1%81_hmmyr2',
       telegram: 'yefimets',
     },
     //   src:

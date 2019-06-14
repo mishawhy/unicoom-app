@@ -11,7 +11,7 @@
           :active="false"
           variant="light"
           @click="nextTemplates"
-          >Что сказать?</b-button
+          >Що сказати?</b-button
         >
       </span>
       <lottie v-if="!loading" :options="defaultOptions" :height="100" :width="700" />
@@ -34,14 +34,14 @@
       ></b-spinner>
       <b-button
         pill
-        variant="dark"
         size="lg"
+        variant="primary"
         class="w-100 p-3 text-left font-weight-bolder shadow"
         v-touch:tap="upload"
         v-if="!loading"
       >
         <i class="fas fa-video mr-2 ml-3"></i>
-        Сказать привет
+        Сказати привіт
       </b-button>
       <!-- <a >
         <img :src="btnIcon" width="70" />
@@ -73,16 +73,17 @@ export default {
       },
       animationSpeed: 1,
       templatesItems: [
-        { text: 'Привет, хочу на концерт Монатика' },
-        { text: 'Привет, настроение выпить что-то' },
-        { text: 'Привет, хочу вечером покурить кальян' },
-        { text: 'Привет, скучно, хочу прогулятся' },
-        { text: 'Привет, было бы неплохо поболтать за кофе' },
-        { text: 'Привет, настроение потусить где-то' },
-        { text: 'Привет, хочу на суши' },
-        { text: 'Привет, настроение посмотреть фильм' },
-        { text: 'Привет, хочу вечером погулять на контрактовой' },
-        { text: 'Привет, сегодня пью коктейли, много' },
+        { text: 'Привіт, я добре знаю англійську' },
+        { text: 'Привіт, я в універі був організатором' },
+        { text: 'Привіт, я минулого літа працював в США логістом' },
+        // { text: 'Привет, хочу вечером покурить кальян' },
+        // { text: 'Привет, скучно, хочу прогулятся' },
+        // { text: 'Привет, было бы неплохо поболтать за кофе' },
+        // { text: 'Привет, настроение потусить где-то' },
+        // { text: 'Привет, хочу на суши' },
+        // { text: 'Привет, настроение посмотреть фильм' },
+        // { text: 'Привет, хочу вечером погулять на контрактовой' },
+        // { text: 'Привет, сегодня пью коктейли, много' },
       ],
       current: 1,
     };
@@ -106,25 +107,26 @@ export default {
       }
     },
     changeFile() {
-      this.file = this.$refs.file.files[0];
-      let formData = new FormData();
-      formData.append('file', this.file);
-      this.loading = true;
-      axios
-        .post(`${process.env.VUE_APP_ENDPOINT}api/publish/new`, formData, {
-          headers: {
-            'Content-Type': 'multipart/form-data',
-          },
-        })
-        .then(e => {
-          this.loading = false;
-          this.$router.push({ path: '/' });
-          console.log('SUCCESS!!', e);
-        })
-        .catch(e => {
-          this.loading = false;
-          console.log('FAILURE!!', e);
-        });
+      this.$router.push({ path: '/' });
+      // this.file = this.$refs.file.files[0];
+      // let formData = new FormData();
+      // formData.append('file', this.file);
+      // this.loading = true;
+      // axios
+      //   .post(`${process.env.VUE_APP_ENDPOINT}api/publish/new`, formData, {
+      //     headers: {
+      //       'Content-Type': 'multipart/form-data',
+      //     },
+      //   })
+      //   .then(e => {
+      //     this.loading = false;
+      //     this.$router.push({ path: '/' });
+      //     console.log('SUCCESS!!', e);
+      //   })
+      //   .catch(e => {
+      //     this.loading = false;
+      //     console.log('FAILURE!!', e);
+      //   });
     },
     onProgress(event) {
       console.log(event);
@@ -135,8 +137,8 @@ export default {
     //   console.log(file);
     // },
     upload() {
-      this.$router.push({ path: '/' });
-      // document.getElementById('fileUpload').click();
+      // this.$router.push({ path: '/' });
+      document.getElementById('fileUpload').click();
     },
   },
   name: 'UploadPanel',
@@ -147,6 +149,16 @@ export default {
 </script>
 
 <style lang="scss">
+// .btn-green {
+//   background-color: #00ff8d !important;
+//   border-color: #00ff8d;
+//   color: black;
+// }
+// .btn-green:hover {
+//   border-color: #00eb82;
+//   background-color: #00eb82 !important;
+//   color: black;
+// }
 .lottie-box {
   left: 0%;
   bottom: -20%;
