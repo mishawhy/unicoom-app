@@ -7,8 +7,8 @@
     class="shadow-sm d-flex align-items-stretch m-2 page"
   >
     <div class="header-say position-absolute fixed-top">
-      <b-button variant="light" pill class="mt-3 shadow" style="font-size:23px"
-        >Офіціант у МакДоналдс</b-button
+      <b-button variant="light" pill class="mt-3 shadow" style="font-size:21px"
+        >Офіціант у МакДоналдс, Львів</b-button
       >
     </div>
     <vue-plyr ref="plyr" :options="options">

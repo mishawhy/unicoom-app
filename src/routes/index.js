@@ -9,13 +9,6 @@ export default [
     },
   },
   {
-    path: ROUTE.MEET_PATH,
-    component: () => import('@/screens/Meet.vue'),
-    meta: {
-      auth: true,
-    },
-  },
-  {
     path: ROUTE.ENTER_PATH,
     component: () => import('@/screens/Enter.vue'),
   },

@@ -36,7 +36,7 @@
         pill
         size="lg"
         variant="primary"
-        class="w-100 p-3 text-left font-weight-bolder shadow"
+        class="w-100 p-3 text-left font-weight-bolder shadow-sm"
         v-touch:tap="upload"
         v-if="!loading"
       >

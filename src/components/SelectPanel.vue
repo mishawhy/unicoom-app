@@ -14,7 +14,8 @@
         <transition name="bounce">
           <i v-if="select" class="fas fa-check mr-2 ml-2"></i>
         </transition>
-        Сказати привіт
+        <span v-if="!select">400-800 ₴/день</span>
+        <span v-if="select">Резюме відправлено</span>
       </b-button>
       <!-- </a> -->
     </div>
@@ -41,9 +42,10 @@ export default {
     slkt() {
       this.select = true;
       setTimeout(() => {
-        this.$emit('select');
         this.select = false;
-      }, 500);
+
+        this.$emit('select');
+      }, 1500);
     },
   },
   name: 'SelectPanel',
